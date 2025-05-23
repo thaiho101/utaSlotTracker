@@ -21,39 +21,6 @@
     </style>
 </head>
 <body>
-    <?php
-// // Default the modal to hidden
-// $validClose = "style='display: none;'";
-// // Check if the modal should be displayed based on session state and URL parameters
-// if ($_SESSION['isNotice'] && !isset($_GET['filter'])) {
-//     // Show the modal if notice has been closed and no filter is set in URL
-//     $validClose = "style='display: block;'";
-// } else if ($_SESSION['isNotice'] && isset($_GET['filter'])) {
-//     // Hide the modal if notice is closed and filter is set in the URL
-//     $validClose = "style='display: none;'";
-// } else if (!$_SESSION['isNotice']) {
-//     // Show the modal if notice hasn't been closed yet
-//     $validClose = "style='display: block;'";
-// }
-
-// if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] == 'refresh=true') {
-// // Check if the modal should be displayed based on session state and URL parameters
-// if ($_SESSION['isNotice'] && !isset($_GET['filter'])) {
-//     // Show the modal if notice has been closed and no filter is set in URL
-//     $validClose = "style='display: block;'";
-// }
-// }
-
-
-// // Handle the form submission to close the modal
-// if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['closeNoticeModal'])) {
-//     $validClose = "style='display: none;'";
-//     $_SESSION['isNotice'] = 'true';  // Mark the notice as closed
-//     // Redirect to the same page (this will process the updated session)
-//     // header("Location: " . $_SERVER['REQUEST_URI']);
-//     // exit();
-// }
-    ?>
     <!-- Embed UTA Website -->
 <dialog id="noticeModal" <?php //echo $validClose;?>>
 	<div id='noticeModalContentCover'>
@@ -126,6 +93,22 @@
         <iframe src="https://www.uta.edu/maps" id="utaFrame"></iframe>
      </div>
      <button id="buttons"></button>
+
+<div id="smallScreenNotice">
+    <div class="noticeContentBox">
+        <h2>Limited Mobile Support</h2>
+        <p>
+            This application is a prototype currently developed and optimized for <strong>laptop and desktop environments</strong>.
+        </p>
+        <p>
+            Access on smaller devices such as phones or tablets is not supported at this stage. Full functionality may not be available.
+        </p>
+        <p class='orangeWords'>
+            Please switch to a larger screen for full access to all features.
+        </p>
+        <p class="noticeSignature">— Nam Ho | UTA Parking Management Tool</p>
+    </div>
+</div>
 
     <script src='script.js'></script>
 </body>

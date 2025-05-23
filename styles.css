@@ -65,7 +65,7 @@ dialog {
     flex-direction: column;
     background-color: white;
     /* top: 10%; */
-    width: 40%;
+    width: 50%;
     height: 90%;
     z-index: 100;
     justify-content: center;
@@ -205,5 +205,60 @@ dialog {
     }
     100% {
         box-shadow: 1px 1px 60px red;
+    }
+}
+
+#smallScreenNotice {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    body > *:not(#smallScreenNotice) {
+        display: none !important;
+    }
+
+    #smallScreenNotice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffb28f;
+        color: #333;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .noticeContentBox {
+        max-width: 65%;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 1px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .noticeContentBox h2 {
+        color: #c0392b;
+        margin-bottom: 15px;
+    }
+
+    .noticeContentBox p {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .orangeWords {
+        color: orange;
+    }
+
+    .noticeSignature {
+        margin-top: 20px;
+        font-style: italic;
+        font-weight: bold;
+        color: #555;
     }
 }
